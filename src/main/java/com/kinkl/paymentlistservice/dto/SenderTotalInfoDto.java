@@ -1,11 +1,11 @@
-package com.kinkl.paymentlistservice.model;
+package com.kinkl.paymentlistservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class SenderTotalInfo {
+public class SenderTotalInfoDto {
     private int senderId;
     private int totallySent;
 }
