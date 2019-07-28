@@ -31,8 +31,8 @@ public class PaymentController {
     public @ResponseBody PaymentListDto savePayments(@RequestBody PaymentListDto payments) {
         List<PaymentDto> unhandledPayments = new ArrayList<>();
         for (PaymentDto payment : payments.getPayments()) {
-            System.out.println(payment);
-            long databaseNodeNumber = payment.getRecipientId() % 3;
+            System.out.println(payment); // TODO remove this line after testing
+            long databaseNodeNumber = payment.getSenderId() % 3;
             PaymentRepository paymentRepository;
             if (databaseNodeNumber == 0) {
                 paymentRepository = this.db0PaymentRepository;
