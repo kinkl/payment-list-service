@@ -25,3 +25,8 @@ TABLESPACE pg_default;
 
 ALTER TABLE public.payments
     OWNER to postgres;
+
+CREATE INDEX sender_id_index
+    ON public.payments USING btree
+    (sender_id ASC NULLS LAST)
+    TABLESPACE pg_default;
