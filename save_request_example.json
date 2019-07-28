@@ -1,0 +1,47 @@
+[
+  {
+    "senderId": 1,
+    "recipientId": 47,
+    "amount": 300
+  },
+  {
+    "senderId": 72,
+    "recipientId": 1,
+    "amount": 70
+  },
+  {
+    "senderId": 62,
+    "recipientId": 72,
+    "amount": 880
+  },
+  {
+    "senderId": 72,
+    "recipientId": 62,
+    "amount": 1000
+  },
+  {
+    "senderId": 1,
+    "recipientId": 97,
+    "amount": 40
+  },
+  {
+    "senderId": 97,
+    "recipientId": 72,
+    "amount": 120
+  },
+  {
+    "senderId": 8,
+    "recipientId": 97,
+    "amount": 500
+  },
+  {
+    "senderId": 47,
+    "recipientId": 62,
+    "amount": 680
+  },
+  {
+    "senderId": 62,
+    "recipientId": 97,
+    "amount": 290
+  }
+]
