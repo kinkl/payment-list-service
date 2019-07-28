@@ -30,7 +30,11 @@ public class PaymentService {
         List<PaymentDto> unhandledPayments = new ArrayList<>();
         for (PaymentDto payment : payments) {
             PaymentRepository paymentRepository = getPaymentRepository(payment.getSenderId());
-            paymentRepository.save(new Payment(payment.getSenderId(), payment.getRecipientId(), payment.getAmount()));
+            try {
+                paymentRepository.save(new Payment(payment.getSenderId(), payment.getRecipientId(), payment.getAmount()));
+            } catch (Exception e) {
+                unhandledPayments.add(payment);
+            }
         }
         return unhandledPayments;
     }
