@@ -57,8 +57,12 @@ public class PaymentService implements DisposableBean {
 
     public SenderTotalInfoDto getSenderTotalInfo(long senderId) {
         PaymentRepository paymentRepository = getPaymentRepository(getDatabaseNodeNumberForSenderId(senderId));
-        Long sum = paymentRepository.findSum(senderId);
-        return new SenderTotalInfoDto(senderId, sum);
+        try {
+            Long sum = paymentRepository.findSum(senderId);
+            return new SenderTotalInfoDto(senderId, sum);
+        } catch (Exception e) {
+            return new SenderTotalInfoDto(null, null);
+        }
     }
 
     private Future<List<PaymentDto>> submitPaymentListInsertion(Integer databaseNodeNumber, List<PaymentDto> payments) {
